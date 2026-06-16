@@ -1,0 +1,151 @@
+{
+  "users": [
+    {
+      "id": "cust-1",
+      "email": "customer@ecotrade.com",
+      "password": "password123",
+      "fullName": "Jane Doe",
+      "role": "customer",
+      "phone": "+1 (555) 123-4567",
+      "address": "123 Eco Way, Green Hills",
+      "walletBalance": 25.5,
+      "rewardPoints": 340,
+      "createdDate": "2026-06-16T00:00:00.000Z"
+    },
+    {
+      "id": "vend-1",
+      "email": "vendor@ecotrade.com",
+      "password": "password123",
+      "fullName": "EcoCycle Solutions",
+      "role": "vendor",
+      "phone": "+1 (555) 987-6543",
+      "address": "456 Recycling Blvd, Industrial Zone",
+      "walletBalance": 150.0,
+      "rewardPoints": 750,
+      "createdDate": "2026-06-16T00:00:00.000Z"
+    },
+    {
+      "id": "admin-1",
+      "email": "admin@ecotrade.com",
+      "password": "password123",
+      "fullName": "EcoTrade Administrator",
+      "role": "admin",
+      "phone": "+1 (555) 000-1111",
+      "address": "EcoTrade HQ, Tech Park",
+      "walletBalance": 0.0,
+      "rewardPoints": 0,
+      "createdDate": "2026-06-16T00:00:00.000Z"
+    }
+  ],
+  "wasteRequests": [
+    {
+      "id": "req-1",
+      "userId": "cust-1",
+      "userFullName": "Jane Doe",
+      "userPhone": "+1 (555) 123-4567",
+      "category": "E-Waste",
+      "quantity": 1,
+      "weight": 12.5,
+      "wasteDescription": "Old office computer housing and desktop motherboard.",
+      "pickupAddress": "123 Eco Way, Green Hills",
+      "pickupDate": "2026-06-25",
+      "status": "pending",
+      "createdDate": "2026-06-16T00:00:00.000Z",
+      "estimatedPayout": 50.0,
+      "pointsAwarded": 500
+    },
+    {
+      "id": "req-2",
+      "userId": "cust-1",
+      "userFullName": "Jane Doe",
+      "userPhone": "+1 (555) 123-4567",
+      "vendorId": "vend-1",
+      "vendorBusinessName": "EcoCycle Solutions",
+      "category": "Plastic",
+      "quantity": 3,
+      "weight": 4.2,
+      "wasteDescription": "Clean plastic bottles and jugs.",
+      "pickupAddress": "123 Eco Way, Green Hills",
+      "pickupDate": "2026-06-18",
+      "status": "accepted",
+      "createdDate": "2026-06-16T00:00:00.000Z",
+      "estimatedPayout": 5.04,
+      "pointsAwarded": 50
+    },
+    {
+      "id": "req-3",
+      "userId": "cust-1",
+      "userFullName": "Jane Doe",
+      "userPhone": "+1 (555) 123-4567",
+      "vendorId": "vend-1",
+      "vendorBusinessName": "EcoCycle Solutions",
+      "category": "Metal",
+      "quantity": 1,
+      "weight": 15,
+      "wasteDescription": "Mixed steel scrap pieces.",
+      "pickupAddress": "123 Eco Way, Green Hills",
+      "pickupDate": "2026-06-10",
+      "status": "completed",
+      "createdDate": "2026-06-11T00:00:00.000Z",
+      "estimatedPayout": 37.5,
+      "pointsAwarded": 375
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-1",
+      "userId": "cust-1",
+      "amount": 37.5,
+      "type": "payout",
+      "status": "completed",
+      "reference": "TX-METAL-COMPLETED",
+      "description": "Waste Recycling payout for Request #req-3 (Metal scrap collection)",
+      "createdDate": "2026-06-11T00:00:00.000Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "userId": "cust-1",
+      "message": "Welcome to EcoTrade! Classify and deposit recyclables to earn cash & reward coupons.",
+      "type": "info",
+      "read": false,
+      "createdDate": "2026-06-16T00:00:00.000Z"
+    }
+  ],
+  "vendors": [
+    {
+      "id": "vend-1",
+      "businessName": "EcoCycle Solutions",
+      "categories": [
+        "Plastic",
+        "Paper",
+        "Metal",
+        "E-Waste"
+      ],
+      "lat": 37.7749,
+      "lng": -122.4194,
+      "rating": 4.8
+    },
+    {
+      "id": "vend-2",
+      "businessName": "GreenTech Glass Recycle",
+      "categories": [
+        "Glass"
+      ],
+      "lat": 37.7833,
+      "lng": -122.4167,
+      "rating": 4.5
+    },
+    {
+      "id": "vend-3",
+      "businessName": "OrganicBio Solutions",
+      "categories": [
+        "Organic Waste"
+      ],
+      "lat": 37.7699,
+      "lng": -122.4468,
+      "rating": 4.9
+    }
+  ]
+}

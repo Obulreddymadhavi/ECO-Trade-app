@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  /* Highly legible Green & Clean White Color Tokens */
+  --color-brand-50: #f4fbf7;   /* Ultra light mint white */
+  --color-brand-100: #e6f6ed;  /* Light crisp mint/sage */
+  --color-brand-150: #c2eed5;  /* Soft supportive green */
+  --color-brand-200: #a3e6be;  /* Clear pastel green border */
+  --color-brand-300: #6cd495;  /* Mid Leaf tone */
+  --color-brand-400: #22c55e;  /* Pure Solid Green */
+  --color-brand-500: #16a34a;  /* Balanced Eco Emerald */
+  --color-brand-600: #15803d;  /* True Forest Green (High Contrast Text) */
+  --color-brand-605: #15803d;
+  --color-brand-645: #166534;  /* Deep Leaf Shadow */
+  --color-brand-650: #166534;  
+  --color-brand-655: #15803d;
+  --color-brand-700: #14532d;  /* Rich Pine Moss */
+  --color-brand-800: #0f3f22;  
+  --color-brand-900: #052e16;  /* Luxury Evergreen Black */
+  --color-brand-950: #02140a;
+
+  /* Overriding Emerald to high contrast, authentic leafy pine colors */
+  --color-emerald-50: #f4fbf7;
+  --color-emerald-100: #e6f6ed;
+  --color-emerald-150: #c2eed5;
+  --color-emerald-200: #a3e6be;
+  --color-emerald-250: #86efac;
+  --color-emerald-300: #4ade80;
+  --color-emerald-400: #22c55e;
+  --color-emerald-500: #16a34a;
+  --color-emerald-600: #15803d;
+  --color-emerald-650: #115e59;
+  --color-emerald-700: #14532d;
+  --color-emerald-800: #0f3f22;
+  --color-emerald-850: #052e16;
+  --color-emerald-900: #052e16;
+  --color-emerald-950: #02140a;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff; /* Crisp, pure surgical white */
+  color: #052e16; /* Clean high-contrast moss-black */
+  overflow-x: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark body {
+  background-color: #020d06; /* Deluxe rich dark pine background */
+  color: #ffffff; /* Absolute bright white text */
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c2eed5;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #14532d;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+/* Vivid Eco Green-White gradient with no harsh purples or cyans */
+.eco-gradient {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+}
+
+.glass-card {
+  background: #ffffff;
+  border: 1px solid #c2eed5; /* Sharp crisp border for ultimate visibility */
+  box-shadow: 0 10px 30px -10px rgba(21, 128, 61, 0.08);
+}
+
+.dark .glass-card {
+  background: #052e16; /* Solid card element */
+  border: 1px solid #14532d;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+}

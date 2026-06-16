@@ -1,0 +1,58 @@
+name: ECO-Trade CI Testing
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Locate project and install dependencies
+        run: |
+          if [ -d "ECO-Trade-app-main" ]; then
+            cd ECO-Trade-app-main
+          fi
+          npm install
+
+      - name: Start Application Server
+        run: |
+          if [ -d "ECO-Trade-app-main" ]; then
+            cd ECO-Trade-app-main
+          fi
+          # Run server in the background
+          npm run dev &
+          # Wait for server to start up (localhost:3000)
+          npx wait-on http://localhost:3000 --timeout 30000
+
+      - name: Run E2E Test Automation Suite
+        run: |
+          if [ -d "ECO-Trade-app-main" ]; then
+            cd ECO-Trade-app-main
+          fi
+          python testing/run_tests.py
+
+      - name: Upload Test Report Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eco-trade-test-report
+          path: |
+            EcoTrade_Test_Report.xlsx
+            **/EcoTrade_Test_Report.xlsx
+          if-no-files-found: warn

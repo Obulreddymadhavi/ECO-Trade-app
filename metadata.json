@@ -1,0 +1,6 @@
+{
+  "name": "EcoTrade",
+  "description": "Smart Waste-to-Wealth Marketplace connecting households, businesses, and recycling vendors with AI classification and scheduling.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
