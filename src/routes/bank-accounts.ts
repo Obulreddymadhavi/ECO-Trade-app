@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Request, Response, NextFunction } from "express";
+import express, { Request, Response, NextFunction } from "express";
 import { getDatabase } from "../utils/database.js";
 import { generateId } from "../utils/helpers.js";
 
-const router = (require("express") as typeof import("express")).Router();
+const router = express.Router();
 
 // Create bank account
 router.post("/bank-accounts", (req: Request, res: Response) => {
