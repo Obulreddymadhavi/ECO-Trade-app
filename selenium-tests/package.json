@@ -1,0 +1,14 @@
+{
+  "name": "eco-trade-selenium-tests",
+  "version": "1.0.0",
+  "description": "Selenium E2E automation tests for EcoTrade",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha tests/**/*.test.js --timeout 15000"
+  },
+  "dependencies": {
+    "mocha": "^10.3.0",
+    "selenium-webdriver": "^4.18.1"
+  }
+}

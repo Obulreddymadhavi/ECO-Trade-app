@@ -1,0 +1,58 @@
+name: Selenium Login E2E Validation
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  selenium-e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install system dependencies (for better-sqlite3)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-dev build-essential
+
+      - name: Navigate and Install dependencies
+        run: |
+          if [ -d "ECO-Trade-app-main" ]; then
+            cd ECO-Trade-app-main
+          fi
+          npm install --legacy-peer-deps
+
+      - name: Start Application Server
+        run: |
+          if [ -d "ECO-Trade-app-main" ]; then
+            cd ECO-Trade-app-main
+          fi
+          # Run server in the background
+          npm run dev > server.log 2>&1 &
+          
+          # Wait for server to start (up to 30 seconds)
+          echo "Waiting for server to start..."
+          for i in {1..30}; do
+            if curl -s http://localhost:3000/api/health > /dev/null 2>&1; then
+              echo "Server is running!"
+              break
+            fi
+            echo "Attempt $i: Server not ready yet..."
+            sleep 1
+          done
+
+      - name: Run Selenium E2E Tests
+        run: |
+          if [ -d "ECO-Trade-app-main" ]; then
+            cd ECO-Trade-app-main
+          fi
+          npm run login

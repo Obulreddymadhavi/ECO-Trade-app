@@ -569,6 +569,7 @@ export default function App() {
                     <input 
                       required
                       type="email" 
+                      id="email"
                       placeholder="Enter username or email address"
                       value={email} 
                       onChange={e => setEmail(e.target.value)}
@@ -583,13 +584,14 @@ export default function App() {
                     <input 
                       required
                       type="password" 
+                      id="password"
                       placeholder="••••••••"
                       value={password} 
                       onChange={e => setPassword(e.target.value)}
                       className="mt-1 w-full rounded-xl bg-slate-50 border border-slate-205 px-4 py-2.5 text-sm focus:border-brand-500 focus:outline-none dark:bg-slate-950 dark:border-slate-800" 
                     />
                   </div>
-                  <button type="submit" className="w-full rounded-xl bg-brand-655 text-white font-extrabold text-sm py-3 hover:bg-brand-700">
+                  <button type="submit" id="login-button" className="w-full rounded-xl bg-brand-655 text-white font-extrabold text-sm py-3 hover:bg-brand-700">
                     Sign In to Portal
                   </button>
                   <p className="text-center text-xs text-slate-400 mt-4">
@@ -744,6 +746,7 @@ export default function App() {
                     <input 
                       required
                       type="text" 
+                      id="otp-input"
                       maxLength={4}
                       placeholder="••••"
                       value={otpInput}
@@ -751,7 +754,7 @@ export default function App() {
                       className="w-full text-center tracking-widest font-black text-lg py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-205 focus:border-brand-500 focus:outline-none text-slate-800 dark:text-white" 
                     />
                   </div>
-                  <button type="submit" className="w-full rounded-xl bg-brand-655 text-white font-extrabold text-xs py-3.5 hover:bg-brand-700 tracking-wide mt-3 uppercase">
+                  <button type="submit" id="otp-confirm-button" className="w-full rounded-xl bg-brand-655 text-white font-extrabold text-xs py-3.5 hover:bg-brand-700 tracking-wide mt-3 uppercase">
                     Confirm & Sign In &rarr;
                   </button>
                   <button 
